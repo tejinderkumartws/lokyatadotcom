@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, Button} from 'react-bootstrap'
 import  '../animate.min.css';
 // import WOW from 'wow.js';
-import "./Contactform.css"
+import "./contactform.css"
 class Contactform extends React.Component {
   // componentDidMount() {
   //   //new WOW().init();
@@ -21,7 +21,7 @@ class Contactform extends React.Component {
             </Row>
             <Form>
             <Row>
-               <Col md="6" className="animate__animated animate__fadeInUp wow" data-wow-duration="2s">
+               <Col md="6" className="animate__animated animate__fadeInUp wow" >
                  <Form.Group controlId="formBasicEmail">
                     <Form.Label>First Name <sup>*</sup></Form.Label>
                     <Form.Control type="text" placeholder="First Name" />
@@ -35,13 +35,13 @@ class Contactform extends React.Component {
                     <Form.Control type="email" placeholder="Email Address" />
                   </Form.Group>
                </Col>
-               <Col md="6" className="animate__animated animate__fadeInUp wow" data-wow-duration="3s">
+               <Col md="6" className="animate__animated animate__fadeInUp wow" >
                  <Form.Group controlId="formBasicEmail">
                     <Form.Label>Message <sup>*</sup></Form.Label>
                     <Form.Control as="textarea" />
                   </Form.Group>
                </Col>
-               <Col className="animate__animated animate__fadeInUp wow" data-wow-duration="4s">
+               <Col className="animate__animated animate__fadeInUp wow" >
                   <Button type="submit" className="button">
                     Submit
                   </Button>

@@ -19,15 +19,15 @@ class Ourimpact extends React.Component {
                </Col>
             </Row>
             <Row>
-               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow" data-wow-duration="1s">
+               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow">
                    <strong>4,800,000 +</strong>
                    <span>Loans Scored</span>
                </Col>
-               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow" data-wow-duration="2s">
+               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow" >
                    <strong>1,300,000 +</strong>
                    <span>Loans Disbursed</span>
                </Col>
-               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow" data-wow-duration="3s">
+               <Col md="4" className="mt-4 animate__animated animate__fadeInUp wow" >
                    <strong>200,000 +</strong>
                    <span>Customers Impacted</span>
                </Col>

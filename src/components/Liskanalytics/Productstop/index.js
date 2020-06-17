@@ -15,7 +15,7 @@ class Productstop extends React.Component {
             <Row>
                <Col sm="12">
                    <h1 className="mb-1 animate__animated animate__fadeInUp wow" >Lokyata Insights</h1>
-                   <span className="d-block animate__animated animate__fadeInUp wow" data-wow-duration="2s">AI-Driven Portfolio Risk Analytics</span>
+                   <span className="d-block animate__animated animate__fadeInUp wow" >AI-Driven Portfolio Risk Analytics</span>
                </Col>
             </Row>
           </Container>

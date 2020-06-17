@@ -44,9 +44,9 @@ class Banner extends React.Component {
               <Container>
                 <Row>
                   <Col sm="12" >
-                    <h1 className="animate__animated animate__fadeInUp wow" data-wow-duration="2s" >Better Decisions Lower Losses Higher Profits</h1>
-                    <h2 className="animate__animated animate__fadeInUp wow" data-wow-duration="3s" >AI-Driven Lending Decisions & Portfolio Risk Analytics</h2>
-                    <button onClick={() => scrollTo('#videodev')} className="button mt-4 animate__animated animate__fadeInUp wow" data-wow-duration="3s">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
+                    <h1 className="animate__animated animate__fadeInUp wow" >Better Decisions Lower Losses Higher Profits</h1>
+                    <h2 className="animate__animated animate__fadeInUp wow" >AI-Driven Lending Decisions & Portfolio Risk Analytics</h2>
+                    <button onClick={() => scrollTo('#videodev')} className="button mt-4 animate__animated animate__fadeInUp wow">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
                   </Col>
                 </Row>
               </Container>

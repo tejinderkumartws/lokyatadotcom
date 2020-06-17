@@ -14,7 +14,7 @@ class Covidbanner extends React.Component {
       <div className="covidbanner">
           <Container>
             <Row>
-               <Col md="12" className="animate__animated animate__fadeInUp wow" data-wow-duration="2s">
+               <Col md="12" className="animate__animated animate__fadeInUp wow">
                   <h6 className="mb-2">Use Lokyata’s AI-driven Predictive Risk Analytics platform in uncertain times like today’s COVID-19 impact, to proactively mitigate risks and optimize portfolio performance.</h6>
                   <Link to="#" className="link">Click here to see how we are helping our clients.</Link>
                </Col>
