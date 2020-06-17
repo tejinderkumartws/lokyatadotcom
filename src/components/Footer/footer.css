@@ -1,0 +1,24 @@
+.footer{
+  background-color:#54595f;
+  padding:55px 0 35px;
+  text-align:center;
+  color:#fff;
+}
+
+.footer a {
+  color:#fff;
+}
+
+.social_icon ul {
+  text-align:center;
+  padding:0px;
+  margin:0px;
+}
+
+.social_icon li {
+  display:inline-block;
+  list-style:none;
+  padding-left:9px;
+  padding-right:9px;
+  font-size:25px;
+}

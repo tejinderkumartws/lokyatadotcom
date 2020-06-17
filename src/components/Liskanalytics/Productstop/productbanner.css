@@ -1,0 +1,20 @@
+.product-banner{
+	text-align:center;
+	color:#fff;
+}
+.product-banner h1 {
+	letter-spacing:2px;
+	font-size:2.75rem;
+}
+.product-banner span {
+	letter-spacing:2px;
+	font-size:1.55rem;
+}
+@media (max-width: 769px) {
+   .product-banner h1{
+	 font-size:2.3rem;
+   }
+   .product-banner span{
+	   font-size:1.1rem;
+   }
+ }
