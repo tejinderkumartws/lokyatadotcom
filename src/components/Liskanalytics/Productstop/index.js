@@ -2,20 +2,19 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap'
 import "./productbanner.css"
-import  '../../animate.min.css';
-// import WOW from 'wow.js';
+import sal from 'sal.js'
+import  '../../sal.css';
+const scrollAnimations = sal();
 class Productstop extends React.Component {
-  // componentDidMount() {
-  //   //new WOW().init();
-  // }
+
   render() {
     return (
       <div className="product-banner">
           <Container>
             <Row>
                <Col sm="12">
-                   <h1 className="mb-1 animate__animated animate__fadeInUp wow" >Lokyata Insights</h1>
-                   <span className="d-block animate__animated animate__fadeInUp wow" >AI-Driven Portfolio Risk Analytics</span>
+                   <h1 className="mb-1" data-sal-duration="1000" data-sal="slide-up" data-sal-easing="ease-out-expo">Lokyata Insights</h1>
+                   <span className="d-block" data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo" >AI-Driven Portfolio Risk Analytics</span>
                </Col>
             </Row>
           </Container>

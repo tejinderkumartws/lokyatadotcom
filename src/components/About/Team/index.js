@@ -7,9 +7,13 @@ import { Container, Row, Col} from 'react-bootstrap';
 import {Link,  graphql, StaticQuery } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import  '../../animate.min.css';
-// import WOW from 'wow.js';
+import sal from 'sal.js'
+import  '../../sal.css';
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 library.add(faLinkedinIn);
+
+const scrollAnimations = sal();
+
 export default function Team() {
   // new WOW().init();
   return (
@@ -58,11 +62,11 @@ export default function Team() {
       `}
       render={data => (
         <div>
-          <div className="our-team">
-              <Container className="text-center pb-5 animate__animated animate__fadeInUp wow" >
-                 <h2 className="h2 pb-4">Board Members & Advisors</h2>
+          <div className="our-team"  >
+              <Container className="text-center pb-5" >
+                 <h2 className="h2 pb-4" data-sal-duration="800" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">Board Members & Advisors</h2>
                  <Row>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="550" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[0].childImageSharp.fluid}
                         />
@@ -70,7 +74,7 @@ export default function Team() {
                         <span>Board Chair & Co-founder</span>
                         <Link to="https://www.linkedin.com/in/charu-ramanathan-phd-9a814/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[1].childImageSharp.fluid}
                         />
@@ -78,7 +82,7 @@ export default function Team() {
                         <span>CEO & Co-founder</span>
                         <Link href="https://www.linkedin.com/in/santosh-thiruthi-9088981/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[2].childImageSharp.fluid}
                         />
@@ -86,7 +90,7 @@ export default function Team() {
                         <span>Board Member & Co-founder</span>
                         <Link href="https://www.linkedin.com/in/ketalpatel/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[3].childImageSharp.fluid}
                         />
@@ -97,9 +101,9 @@ export default function Team() {
                  </Row>
               </Container>
               <Container className="text-center pt-5 animate__animated animate__fadeInUp wow" >
-                 <h2 className="h2 pb-4">Team</h2>
+                 <h2 className="h2 pb-4" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">Team</h2>
                  <Row>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[1].childImageSharp.fluid}
                         />
@@ -107,7 +111,7 @@ export default function Team() {
                         <span>CEO & Co-founder</span>
                         <Link  href="https://www.linkedin.com/in/santosh-thiruthi-9088981/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[4].childImageSharp.fluid}
                         />
@@ -115,7 +119,7 @@ export default function Team() {
                         <span>CTO</span>
                         <Link href="https://www.linkedin.com/in/sabireley/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[5].childImageSharp.fluid}
                         />
@@ -123,7 +127,7 @@ export default function Team() {
                         <span>Product & Data Science Director</span>
                         <Link href="https://www.linkedin.com/in/tommyeastman/"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
                     </Col>
-                    <Col md="3" sm="6" className="mt-3">
+                    <Col md="3" sm="6" className="mt-3" data-sal-duration="500" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={data.allFile.nodes[6].childImageSharp.fluid}
                         />

@@ -714,6 +714,11 @@ pre tt:after {
   }
 
 }
+@media (max-width: 568px) {
+   .button{
+     font-size:.68rem;
+   }
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

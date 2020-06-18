@@ -1,8 +1,8 @@
 // import { Link } from "gatsby";
 import React from "react";
 import "./banner.css"
-import  '../../animate.min.css';
-// import WOW from 'wow.js';
+import sal from 'sal.js'
+import  '../../sal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -12,14 +12,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 // import myVideo from '../../../images/LokyataIntroduction.MP4'
 library.add(faPlayCircle);
+
+const scrollAnimations = sal();
+
 class Banner extends React.Component {
-  // componentDidMount() {
-  //   // new WOW().init();
-  // }
-  
   render() {
     return (
       <div className="banner-min">
+        
           <div className="position-relative">
             <div className="player-wrapper ">
               <ReactPlayer
@@ -44,9 +44,9 @@ class Banner extends React.Component {
               <Container>
                 <Row>
                   <Col sm="12" >
-                    <h1 className="animate__animated animate__fadeInUp wow" >Better Decisions Lower Losses Higher Profits</h1>
-                    <h2 className="animate__animated animate__fadeInUp wow" >AI-Driven Lending Decisions & Portfolio Risk Analytics</h2>
-                    <button onClick={() => scrollTo('#videodev')} className="button mt-4 animate__animated animate__fadeInUp wow">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
+                    <h1 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">Better Decisions Lower Losses Higher Profits</h1>
+                    <h2 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">AI-Driven Lending Decisions & Portfolio Risk Analytics</h2>
+                    <button onClick={() => scrollTo('#videodev')} className="button mt-4"  data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
                   </Col>
                 </Row>
               </Container>
