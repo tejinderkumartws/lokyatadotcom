@@ -1,6 +1,7 @@
-// import { Link } from "gatsby";
 import React from "react";
 import "./banner.css"
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import sal from 'sal.js'
 import  '../../sal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,16 +11,14 @@ import ReactPlayer from 'react-player'
 import {Container, Row, Col} from 'react-bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle} from '@fortawesome/free-solid-svg-icons';
-// import myVideo from '../../../images/LokyataIntroduction.MP4'
 library.add(faPlayCircle);
-
-const scrollAnimations = sal();
-
-class Banner extends React.Component {
+ sal();
+class BannerData extends React.Component {
   render() {
+    const { data } = this.props
+    const { contentfulHome } = data
     return (
       <div className="banner-min">
-        
           <div className="position-relative">
             <div className="player-wrapper ">
               <ReactPlayer
@@ -44,15 +43,37 @@ class Banner extends React.Component {
               <Container>
                 <Row>
                   <Col sm="12" >
-                    <h1 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">Better Decisions Lower Losses Higher Profits</h1>
-                    <h2 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">AI-Driven Lending Decisions & Portfolio Risk Analytics</h2>
+                    <h1 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">{contentfulHome.betterDecisions}</h1>
+                   
+                    <h2 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">{contentfulHome.childContentfulHomeAiDrivenLendingDecisionTextNode.aiDrivenLendingDecision}</h2>
                     <button onClick={() => scrollTo('#videodev')} className="button mt-4"  data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
                   </Col>
                 </Row>
               </Container>
            </div> 
       </div>
-    )
+   )
   }
 }
-export default Banner
+BannerData.propTypes = {
+data: PropTypes.object,
+}
+
+export default function Banner(props) {
+return (
+  <StaticQuery
+    query={graphql`
+          query bannerQuery {
+            contentfulHome {
+              childContentfulHomeAiDrivenLendingDecisionTextNode {
+                aiDrivenLendingDecision
+              }
+              betterDecisions
+            }
+          }
+    `}
+    render={data => <BannerData data={data} {...props} />}
+  />
+)
+}
+

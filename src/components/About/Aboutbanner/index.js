@@ -1,66 +1,67 @@
 import React from "react";
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import "./banner.css"
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import { Container, Row, Col} from 'react-bootstrap';
-import {  graphql, StaticQuery } from 'gatsby'
 import sal from 'sal.js'
 import  '../../sal.css';
-const scrollAnimations = sal();
-export default function Aboutbanner() {
+  sal();
 
+class AboutbannerData extends React.Component {
+  render() {
+    const { data } = this.props
+    const { contentfulAbout } = data
+    return (
+      <div>
+         <div className="about_banner">
+              <img src={contentfulAbout.banner.fluid.src} alt="#" />
+         </div>
+          <div className="about-text">
+             <Container>
+               <Row>
+                   <Col data-sal-duration="800" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+                    <h1>{contentfulAbout.lokyataIs}</h1>
+                     <span dangerouslySetInnerHTML={{
+                      __html:
+                      contentfulAbout.childContentfulAboutATeamOfTextNode
+                          .aTeamOf,
+                      }}/>
+                    </Col>
+                 </Row>
+             </Container>
+         </div>
+      </div>
+    )
+  }
+}
+
+AboutbannerData.propTypes = {
+  data: PropTypes.object,
+}
+
+export default function Aboutbanner(props) {
   return (
     <StaticQuery
       query={graphql`
-        query Aboutbanner {
-          allFile(
-            filter: {
-              relativePath: {
-                in: [
-                  "rice-scaled.jpg"
-                ]
-              }
-            }
-          ) {
-            nodes {
-              childImageSharp {
-                fluid (maxWidth: 1000){
-                  base64
-                  tracedSVG
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                  presentationWidth
-                  presentationHeight
+            query aboutQuery {
+              contentfulAbout {
+                childContentfulAboutATeamOfTextNode {
+                  aTeamOf
                 }
+                banner {
+                  fluid {
+                    src
+                    sizes
+                    tracedSVG
+                    srcSet
+                  }
+                }
+                lokyataIs
               }
             }
-          }
-        }
       `}
-      render={data => (
-        <div>
-          <div className="about_banner">
-            <Img
-                fluid={data.allFile.nodes[0].childImageSharp.fluid}
-              />
-          </div>
-          <div className="about-text">
-              <Container>
-                  <Row>
-                    <Col data-sal-duration="800" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
-                      <h1>LOKYATA IS</h1>
-                      <span>A team of passionate serial entrepreneurs, tech evangelists, credit scoring experts, data scientists and software engineers on a mission to advance technology to foster financial inclusion.</span>
-                    </Col>
-                  </Row>
-              </Container>
-          </div>
-         </div>
-      )}
+      render={data => <AboutbannerData data={data} {...props} />}
     />
   )
 }

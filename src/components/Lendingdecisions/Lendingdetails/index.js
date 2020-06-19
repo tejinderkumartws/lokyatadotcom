@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 library.add(faPlayCircle);
-const scrollAnimations = sal();
+  sal();
 
 class Lendingdetails extends React.Component {
  

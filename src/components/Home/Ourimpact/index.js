@@ -1,20 +1,23 @@
-// import { Link } from "gatsby"
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap'
 import "./ourimpact.css"
 import sal from 'sal.js'
 import  '../../sal.css';
-const scrollAnimations = sal();
-class Ourimpact extends React.Component {
+   sal();
+class OurimpactData extends React.Component {
 
   render() {
+    const { data } = this.props
+    const { contentfulHomeOurImpactTextNode } = data
     return (
       <div className="ourimpact-min text-center ">
           <Container>
             <Row>
                <Col>
-                   <h3 className="mb-lg-4 h1" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">Our Impact</h3>
+                   <h3 className="mb-lg-4 h1" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
                </Col>
             </Row>
             <Row>
@@ -33,7 +36,24 @@ class Ourimpact extends React.Component {
             </Row>
           </Container>
       </div>
-    )
+   )
   }
 }
-export default Ourimpact
+OurimpactData.propTypes = {
+data: PropTypes.object,
+}
+
+export default function Ourimpact(props) {
+return (
+    <StaticQuery
+      query={graphql`
+          query ourImpactQuery {
+            contentfulHomeOurImpactTextNode {
+              ourImpact
+            }
+          }
+      `}
+      render={data => <OurimpactData data={data} {...props} />}
+    />
+  ) 
+}

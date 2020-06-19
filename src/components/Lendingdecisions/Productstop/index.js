@@ -4,7 +4,7 @@ import { Container, Row, Col} from 'react-bootstrap'
 import "./productbanner.css"
 import sal from 'sal.js'
 import  '../../sal.css';
-const scrollAnimations = sal();
+  sal();
 
 class Productstop extends React.Component {
   render() {
