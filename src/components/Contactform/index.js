@@ -27,17 +27,20 @@ render() {
                data-netlify="true" 
                data-netlify-honeypot="bot-field"
                className="form"
+               data-netlify-recaptcha="true"
             >
             <Row>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                 <input type="hidden" name="form-name" value="contact" />
-                  <Form.Group controlId="formBasicEmail" >
+                <Form.Group controlId="formBasicEmail" >
                     <Form.Label>First Name <sup>*</sup></Form.Label>
                     <Form.Control type="text" name="firstname" placeholder="First Name" />
-                  
+                  </Form.Group>
+                  <Form.Group controlId="formBasicEmail">
                     <Form.Label>Last Name <sup>*</sup></Form.Label>
                     <Form.Control type="tex" name="lastname" placeholder="Last Name" />
-                 
+                  </Form.Group>
+                  <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email <sup>*</sup></Form.Label>
                     <Form.Control type="email" name="email" placeholder="Email Address" />
                   </Form.Group>
@@ -48,6 +51,7 @@ render() {
                     <Form.Control as="textarea" name="message" />
                   </Form.Group>
               </Col>
+              <div></div>
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
                     Submit
