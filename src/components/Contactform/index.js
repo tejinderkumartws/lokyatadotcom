@@ -21,26 +21,31 @@ render() {
                   <span>{contentfulContact.childContentfulContactTextAreaTextNode.textArea}</span>
               </Col>
             </Row>
-            <Form>
+            <Form 
+               method="post" 
+               name="contact" 
+               data-netlify="true"
+               data-netlify-honeypot="bot-field"
+            >
             <Row>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group controlId="formBasicEmail" >
                     <Form.Label>First Name <sup>*</sup></Form.Label>
-                    <Form.Control type="text" placeholder="First Name" />
+                    <Form.Control type="text" name="firstname" placeholder="First Name" />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Last Name <sup>*</sup></Form.Label>
-                    <Form.Control type="tex" placeholder="Last Name" />
+                    <Form.Control type="tex" name="lastname" placeholder="Last Name" />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email <sup>*</sup></Form.Label>
-                    <Form.Control type="email" placeholder="Email Address" />
+                    <Form.Control type="email" name="email" placeholder="Email Address" />
                   </Form.Group>
               </Col>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Message <sup>*</sup></Form.Label>
-                    <Form.Control as="textarea" />
+                    <Form.Control as="textarea" name="message" />
                   </Form.Group>
               </Col>
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
