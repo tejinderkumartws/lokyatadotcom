@@ -22,8 +22,8 @@ render() {
               </Col>
             </Row>
             <Form 
-               name="contact" 
-               method="post" 
+               name="contact-form" 
+               methodx="post" 
                data-netlify="true" 
                data-netlify-honeypot="bot-field"
                className="form"
