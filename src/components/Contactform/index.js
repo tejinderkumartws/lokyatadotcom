@@ -22,13 +22,15 @@ render() {
               </Col>
             </Row>
             <Form 
-               method="post" 
                name="contact" 
-               data-netlify="true"
+               method="post" 
+               data-netlify="true" 
                data-netlify-honeypot="bot-field"
+               className="form"
             >
             <Row>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+                <input type="hidden" name="form-name" value="contact" />
                 <Form.Group controlId="formBasicEmail" >
                     <Form.Label>First Name <sup>*</sup></Form.Label>
                     <Form.Control type="text" name="firstname" placeholder="First Name" />
