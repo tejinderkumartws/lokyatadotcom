@@ -23,7 +23,7 @@ render() {
             </Row>
             <Form 
                name="contact-form" 
-               methodx="post" 
+               method="post" 
                data-netlify="true" 
                data-netlify-honeypot="bot-field"
                className="form"
