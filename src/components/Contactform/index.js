@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import React from "react";
-
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { navigateTo } from "gatsby-link";
 import Recaptcha from "react-google-recaptcha";
@@ -13,33 +12,26 @@ import  '../sal.css';
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
 function encode(data) {
-  return Object.keys(data)
+return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 }
-
 class ContactformrData extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        fieldchage: false,
-        errcaptcha: null
-      };
-    }
+        super(props);
+        this.state = {};
+        }
 
-    handleChange = e => {
-      this.setState({ [e.target.name]: e.target.value, fieldchage: true });
-    };
+        handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+        };
 
-    handleRecaptcha = value => {
-      this.setState({ "grecaptcharesponse": value });
-    };
+        handleRecaptcha = value => {
+        this.setState({ "g-recaptcha-response": value });
+        };
 
-    handleSubmit = e => {
-      e.preventDefault();
-      if(!this.state.grecaptcharesponse) {
-        this.setState({ "errcaptcha": true });
-      }else {
+        handleSubmit = e => {
+        e.preventDefault();
         const form = e.target;
         fetch("/", {
             method: "POST",
@@ -49,21 +41,14 @@ class ContactformrData extends React.Component {
             ...this.state
             })
         })
-        .then((data) => { 
-          console.log(data)
-          navigateTo("/thanks")
-        })
-        .catch(error => alert(error));
-      }
-      
-    };
-        
-  render() {
-    const { data } = this.props;
-    const { contentfulContact } = data;
-
-    return (
-        <div className="Contactform">
+            .then(() => navigateTo(form.getAttribute("action")))
+            .catch(error => alert(error));
+        };
+render() {
+  const { data } = this.props
+  const { contentfulContact } = data
+  return (
+      <div className="Contactform">
           <Container>
             <Row>
               <Col sm="12" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">
@@ -74,43 +59,40 @@ class ContactformrData extends React.Component {
             <Form 
                name="contact" 
                className="form"
-               name="contact"
                method="post"
+               action="/thanks/"
                data-netlify="true"
                data-netlify-recaptcha="true"
-               class="needs-validation"
-               novalidate netlify
                onSubmit={this.handleSubmit}
             >
             <Row>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                 <input type="hidden" name="form-name" value="contact" />
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group controlId="formBasicEmail" >
                     <Form.Label htmlFor="First Name">First Name <sup>*</sup></Form.Label>
                     <Form.Control type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Last Name">Last Name <sup>*</sup></Form.Label>
-                    <Form.Control type="tex" name="lastname" placeholder="Last Name"  onChange={this.handleChange} required  />
+                    <Form.Control type="tex" name="lastname" placeholder="Last Name"  onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Email">Email <sup>*</sup></Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Email Address"  onChange={this.handleChange} required  />
+                    <Form.Control type="email" name="email" placeholder="Email Address"  onChange={this.handleChange} />
                   </Form.Group>
               </Col>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Message">Message <sup>*</sup></Form.Label>
-                    <Form.Control as="textarea" name="message" required  onChange={this.handleChange} />
+                    <Form.Control as="textarea" name="message" onChange={this.handleChange} />
                   </Form.Group>
               </Col>
               <Col md="12" className="mb-3 mt-2" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Recaptcha
-                  ref="recaptcha"
-                  sitekey={"6LeHT6gZAAAAAC88WSw7jF7k97sillbbMOrwWgco"}
-                  onChange={this.handleRecaptcha}
-                />
-                {this.state.errcaptcha && <p className="text-danger">Captcha is required</p>}
+                      ref="recaptcha"
+                      sitekey={"6LeHT6gZAAAAAC88WSw7jF7k97sillbbMOrwWgco"}
+                      onChange={this.handleRecaptcha}
+                  />
               </Col>
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
@@ -120,12 +102,11 @@ class ContactformrData extends React.Component {
             </Row>
             </Form>
           </Container>
-        </div>
+      </div>
 
     )
   }
 }
-
 ContactformrData.propTypes = {
   data: PropTypes.object,
 }
