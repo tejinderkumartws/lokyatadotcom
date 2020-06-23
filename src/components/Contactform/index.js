@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { navigateTo } from "gatsby-link";
@@ -19,88 +18,112 @@ function encode(data) {
     .join("&");
 }
 
-export const ContactformrData = ({data}) => {
-    const [recaptchaval, setRecaptchaval] = useState();
-    const [errcaptcha, setErrcaptcha] = useState();
-    const { register, handleSubmit, watch, errors } = useForm({
-      mode: "onBlur"
-    });
-    const onSubmit = submitdata => {
-      if(!recaptchaval){
-        setErrcaptcha("Captcha is required")
-      }else{
+class ContactformrData extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        fieldchage: false,
+        errcaptcha: null
+      };
+    }
+
+    handleChange = e => {
+      this.setState({ [e.target.name]: e.target.value, fieldchage: true });
+    };
+
+    handleRecaptcha = value => {
+      this.setState({ "grecaptcharesponse": value });
+    };
+
+    handleSubmit = e => {
+      e.preventDefault();
+      if(!this.state.grecaptcharesponse) {
+        this.setState({ "errcaptcha": true });
+      }else {
+        const form = e.target;
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({
-            "form-name": "contact",
-            ...submitdata
+            "form-name": form.getAttribute("name"),
+            ...this.state
             })
         })
         .then((data) => { 
           console.log(data)
-          navigateTo("/thanks/")
+          navigateTo("/thanks")
         })
         .catch(error => alert(error));
       }
+      
     };
-
-    const handleRecaptcha = value => {
-      setRecaptchaval(value);
-    };
-
+        
+  render() {
+    const { data } = this.props;
     const { contentfulContact } = data;
-  
-    console.log(watch("example")); // watch input value by passing the name of it
-  
+
     return (
         <div className="Contactform">
-            <Container>
+          <Container>
             <Row>
-                <Col sm="12" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">
-                    <h4 className="h2 mb-2">{contentfulContact.anyQuestion}</h4>
-                    <span>{contentfulContact.childContentfulContactTextAreaTextNode.textArea}</span>
-                </Col>
+              <Col sm="12" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">
+                  <h4 className="h2 mb-2">{contentfulContact.anyQuestion}</h4>
+                  <span>{contentfulContact.childContentfulContactTextAreaTextNode.textArea}</span>
+              </Col>
             </Row>
-            <form 
-                name="contact" 
-                className="form"
-                name="contact"
-                method="post"
-                data-netlify="true"
-                data-netlify-recaptcha="true"
-                class="needs-validation"
-                novalidate netlify
-                onSubmit={handleSubmit(onSubmit)}
+            <Form 
+               name="contact" 
+               className="form"
+               name="contact"
+               method="post"
+               data-netlify="true"
+               data-netlify-recaptcha="true"
+               class="needs-validation"
+               novalidate netlify
+               onSubmit={this.handleSubmit}
             >
             <Row>
-                <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+              <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="text" name="firstname" placeholder="First Name" ref={register({ required: true })} />
-                {errors.firstname && <p className="text-danger">First name is required</p>}
-
-                <input type="text" name="lastname" placeholder="Last Name" ref={register({ required: true })} />
-                {errors.lastname && <p className="text-danger">Last name is required</p>}
-
-                <input type="email" name="email" placeholder="Email" ref={register({ required: true })} />
-                {errors.email && <p className="text-danger">Email is not valid</p>}
-
-                <textarea name="message" ref={register({ required: true })}></textarea>
-                {errors.message && <p className="text-danger">Message is required</p>}
-
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label htmlFor="First Name">First Name <sup>*</sup></Form.Label>
+                    <Form.Control type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label htmlFor="Last Name">Last Name <sup>*</sup></Form.Label>
+                    <Form.Control type="tex" name="lastname" placeholder="Last Name"  onChange={this.handleChange} required  />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label htmlFor="Email">Email <sup>*</sup></Form.Label>
+                    <Form.Control type="email" name="email" placeholder="Email Address"  onChange={this.handleChange} required  />
+                  </Form.Group>
+              </Col>
+              <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label htmlFor="Message">Message <sup>*</sup></Form.Label>
+                    <Form.Control as="textarea" name="message" required  onChange={this.handleChange} />
+                  </Form.Group>
+              </Col>
+              <Col md="12" className="mb-3 mt-2" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Recaptcha
+                  ref="recaptcha"
                   sitekey={"6LeHT6gZAAAAAC88WSw7jF7k97sillbbMOrwWgco"}
-                  onChange={handleRecaptcha}
+                  onChange={this.handleRecaptcha}
                 />
-                {errcaptcha && <p className="text-danger">Captcha is required</p>}
-
-                <input type="submit" />
-                </Col>
+                {this.state.errcaptcha && <p className="text-danger">Captcha is required</p>}
+              </Col>
+              <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
+                  <Button type="submit" className="button">
+                    Submit
+                  </Button>
+              </Col>
             </Row>
-            </form>
-            </Container>
+            </Form>
+          </Container>
         </div>
-    );
+
+    )
+  }
 }
 
 ContactformrData.propTypes = {
