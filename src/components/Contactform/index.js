@@ -33,10 +33,11 @@ class ContactformrData extends React.Component {
         };
 
         handleSubmit = e => {
+          e.preventDefault();
           if(!this.state.grecaptcharesponse){
             this.setState({errcaptcha: true})
           }else{
-            e.preventDefault();
+            
               const form = e.target;
               fetch("/", {
                   method: "POST",
