@@ -27,7 +27,7 @@ render() {
                netlify ="true"
                data-netlify-recaptcha="true"
                data-netlify="true" 
-               data-netlify-honeypot="bot-field"
+              //  data-netlify-honeypot="bot-field"
                className="form"
             >
             <Row>
