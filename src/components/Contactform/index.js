@@ -19,7 +19,9 @@ return Object.keys(data)
 class ContactformrData extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+          errcaptcha: null
+        };
         }
 
         handleChange = e => {
@@ -27,22 +29,27 @@ class ContactformrData extends React.Component {
         };
 
         handleRecaptcha = value => {
-        this.setState({ "g-recaptcha-response": value });
+        this.setState({ "grecaptcharesponse": value });
         };
 
         handleSubmit = e => {
-        e.preventDefault();
-        const form = e.target;
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-            "form-name": form.getAttribute("name"),
-            ...this.state
-            })
-        })
+          if(!this.state.grecaptcharesponse){
+            this.setState({errcaptcha: true})
+          }else{
+            e.preventDefault();
+              const form = e.target;
+              fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: encode({
+                  "form-name": form.getAttribute("name"),
+                  ...this.state
+                  })
+              })
             .then(() => navigateTo(form.getAttribute("action")))
             .catch(error => alert(error));
+          }
+        
         };
 render() {
   const { data } = this.props
@@ -93,6 +100,7 @@ render() {
                       sitekey={"6LeHT6gZAAAAAC88WSw7jF7k97sillbbMOrwWgco"}
                       onChange={this.handleRecaptcha}
                   />
+                  {this.state.errcaptcha && <p className="text-danger">Captcha is required</p>}
               </Col>
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
