@@ -54,7 +54,7 @@ class LendingsolutionsData extends React.Component {
                 <div className="player-wrapper mt-5" id="videodev">
                   <ReactPlayer
                     className="react-player"
-                    url="https://www.youtube.com/embed/R8qN1WL5RKg"
+                    url={contentfulHome.youtube.file.url}
                     width="100%"
                     height="100%"
                     controls
@@ -83,6 +83,11 @@ return (
             }
             lokyataProvides {
               lokyataProvides
+            }
+            youtube {
+              file {
+                url
+              }
             }
           }
           allFile(filter: {relativePath: {in: ["analytics-1.png", "lendingDecisions-1.png"]}}) {

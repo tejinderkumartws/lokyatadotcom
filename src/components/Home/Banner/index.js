@@ -23,7 +23,7 @@ class BannerData extends React.Component {
             <div className="player-wrapper ">
               <ReactPlayer
                   className="react-player"
-                  url='https://www.youtube.com/embed/R8qN1WL5RKgautoplay=1&modestbranding=1rel=0'
+                  url={contentfulHome.youtube.file.url}
                   width="100%"
                   height="100%"
                   playing
@@ -67,6 +67,11 @@ return (
             contentfulHome {
               childContentfulHomeAiDrivenLendingDecisionTextNode {
                 aiDrivenLendingDecision
+              }
+              youtube {
+                file {
+                  url
+                }
               }
               betterDecisions
             }

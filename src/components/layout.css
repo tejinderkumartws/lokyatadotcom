@@ -699,6 +699,10 @@ pre tt:after {
     background-size:cover;
     padding:15% 0;
 }
+.thanks-min {
+  height:calc(100vh - 315px);
+}
+
 @media only screen and (min-width: 1400px) {
   .product-banner{
     padding:10% 0;
