@@ -32,7 +32,7 @@ render() {
             >
             <Row>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
-                <input type="hidden" name="form-name" value="contact" />
+                {/* <input type="hidden" name="form-name" value="contact" /> */}
                 <Form.Group controlId="formBasicEmail" >
                     <Form.Label htmlFor="First Name">First Name <sup>*</sup></Form.Label>
                     <Form.Control type="text" name="firstname" placeholder="First Name" />
@@ -52,7 +52,7 @@ render() {
                     <Form.Control as="textarea" name="message" />
                   </Form.Group>
               </Col>
-              <div data-netlify-recaptcha="true" />
+              <div data-netlify-recaptcha="true" ></div>
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
                     Submit
