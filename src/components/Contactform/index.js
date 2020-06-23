@@ -23,7 +23,8 @@ render() {
             </Row>
             <Form 
                name="contact" 
-               method="post" 
+               method="POST" 
+               netlify ="true"
                data-netlify-recaptcha="true"
                data-netlify="true" 
                data-netlify-honeypot="bot-field"
@@ -51,7 +52,7 @@ render() {
                     <Form.Control as="textarea" name="message" />
                   </Form.Group>
               </Col>
-              <div data-netlify-recaptcha="true"></div>
+              <div data-netlify-recaptcha="true" />
               <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
                     Submit
