@@ -29,7 +29,7 @@ class ContactformrData extends React.Component {
         };
 
         handleRecaptcha = value => {
-        this.setState({ "grecaptcharesponse": value });
+          this.setState({ "g-recaptcha-response": value, "grecaptcharesponse": value });
         };
 
         handleSubmit = e => {
@@ -37,7 +37,7 @@ class ContactformrData extends React.Component {
           if(!this.state.grecaptcharesponse){
             this.setState({errcaptcha: true})
           }else{
-            
+            this.setState({errcaptcha: undefined, grecaptcharesponse: undefined})
               const form = e.target;
               fetch("/", {
                   method: "POST",
@@ -78,21 +78,21 @@ render() {
                 <input type="hidden" name="form-name" value="contact" />
                 <Form.Group controlId="formBasicEmail" >
                     <Form.Label htmlFor="First Name">First Name <sup>*</sup></Form.Label>
-                    <Form.Control type="text" name="firstname" placeholder="First Name" onChange={this.handleChange} />
+                    <Form.Control type="text" name="form.firstname" placeholder="First Name" onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Last Name">Last Name <sup>*</sup></Form.Label>
-                    <Form.Control type="tex" name="lastname" placeholder="Last Name"  onChange={this.handleChange} />
+                    <Form.Control type="tex" name="form.lastname" placeholder="Last Name"  onChange={this.handleChange} />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Email">Email <sup>*</sup></Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Email Address"  onChange={this.handleChange} />
+                    <Form.Control type="email" name="form.email" placeholder="Email Address"  onChange={this.handleChange} />
                   </Form.Group>
               </Col>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Message">Message <sup>*</sup></Form.Label>
-                    <Form.Control as="textarea" name="message" onChange={this.handleChange} />
+                    <Form.Control as="textarea" name="form.message" onChange={this.handleChange} />
                   </Form.Group>
               </Col>
               <Col md="12" className="mb-3 mt-2" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
