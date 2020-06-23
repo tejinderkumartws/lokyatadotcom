@@ -6,7 +6,8 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <Aboutbanner></Aboutbanner>
-    <Team></Team>
+    <Team teamrole="Board Members & Advisors"></Team>
+    <Team teamrole="Team"></Team>
   </Layout>
 )
 
