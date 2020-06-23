@@ -13,15 +13,15 @@ import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 library.add(faLinkedinIn);
   sal();
 
-export default function Team({ teamrole }) {
+export default function Boardmembers({ teamrole }) {
   // console.log(teamrole);
   return (
     <StaticQuery
       query={graphql`
-        query TeamQuery {
+        query BoardmembersQuery {
           allContentfulTeam(
             sort: {fields : [createdAt],order: ASC}
-            filter: {memberRole: {eq: "Team"}}) {
+            filter: {memberRole: {eq: "Board Members & Advisors"}}) {
             nodes {
               memberName
               memberDesignation

@@ -61,7 +61,7 @@ render() {
                className="form"
                name="contact"
                method="post"
-            // action="/thanks/"
+               action="/thanks/"
                data-netlify="true"
                data-netlify-recaptcha="true"
                onSubmit={this.handleSubmit}
