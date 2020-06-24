@@ -104,7 +104,6 @@ render() {
                   
                   {this.state.errcaptcha && <div class="alert alert-danger" role="alert">Captcha is required</div>}
                   
-                  
               </Col>
               <Col md="12" data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">

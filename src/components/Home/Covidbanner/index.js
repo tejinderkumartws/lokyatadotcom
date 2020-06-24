@@ -18,15 +18,15 @@ class CovidbannerData extends React.Component {
       <div className="covidbanner">
           <Container>
             <Row>
-               <Col md="12" data-sal-duration="1000" data-sal="slide-up" data-sal-easing="ease-out-bounce">
-                  <h6 className="mb-2"
+               <Col md="12">
+                  <h6 className="mb-2"  data-sal-duration="600" data-sal="fade" data-sal-easing="ease-out-bounce"
                     dangerouslySetInnerHTML={{
                       __html:
                       contentfulHome.covid19Instruction
                           .covid19Instruction,
                       }}
                   />
-                  <Link to="/risk-analytics" className="link">{contentfulHome.link}</Link>
+                  <Link to="/risk-analytics" className="link" data-sal-duration="600" data-sal="fade" data-sal-easing="ease-out-bounce">{contentfulHome.link}</Link>
                </Col>
             </Row>
           </Container>

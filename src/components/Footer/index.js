@@ -29,9 +29,9 @@ class FooterData extends React.Component {
               </Col>
               <Col md="12" className="mt-2 social_icon">
                   <ul>
-                    <li><a title="Linkdin" aria-label="Linkdin" href="{contentfulFooter.linkedIn}" target="_blank"><FontAwesomeIcon icon={faLinkedinIn}/></a></li>
-                    <li><a title="Instagram" aria-label="Instagram" href="{contentfulFooter.instagram}" target="_blank"><FontAwesomeIcon icon={faInstagram}/></a></li>
-                    <li><a title="Facebook" aria-label="Facebook" href="{contentfulFooter.facebook}" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+                    <li><a title="Linkdin" aria-label="Linkdin" href={contentfulFooter.linkedIn} target="_blank"><FontAwesomeIcon icon={faLinkedinIn}/></a></li>
+                    <li><a title="Instagram" aria-label="Instagram" href={contentfulFooter.instagram} target="_blank"><FontAwesomeIcon icon={faInstagram}/></a></li>
+                    <li><a title="Facebook" aria-label="Facebook" href={contentfulFooter.facebook} target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a></li>
                   </ul>
               </Col>
             </Row>

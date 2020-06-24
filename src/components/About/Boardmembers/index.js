@@ -45,10 +45,10 @@ export default function Boardmembers({ teamrole }) {
         <div>
           <div className="our-team"  >
               <Container className="text-center pb-5 animate__animated animate__fadeInUp wow" >
-                <h2 className="h2 pb-4" data-sal-duration="800" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">{teamrole}</h2>
+                <h2 className="h2 pb-4" data-sal-duration="300" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">{teamrole}</h2>
                  <Row>
                     {data.allContentfulTeam.nodes.map((node)=> (
-                      <Col md="3" sm="6" className="mt-3" data-sal-duration="550" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+                      <Col md="3" sm="6" className="mt-3" data-sal-duration="300" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                         <Img
                             fluid={node.image.fluid}
                         />

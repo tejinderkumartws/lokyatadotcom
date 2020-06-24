@@ -27,6 +27,12 @@
 .Contactform textarea {
 	height:210px;
 }
+.recaptchad p{
+	margin-bottom:0px;
+}
+.alert{
+	padding:3px;
+}
 @media (max-width: 767px) {
 	.Contactform textarea {
 		height:100px;

@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-recaptcha`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
+    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
