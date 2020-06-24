@@ -4,7 +4,7 @@ import React from "react"
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
-import {Covidbanner, Banner, Ourimpact, Lendingsolutions} from '../components/Home'
+import {Covidbanner, Banner, Ourimpact, Projects} from '../components/Home'
 import Contactform from "../components/Contactform"
 
 const IndexPage = () => (
@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Covidbanner></Covidbanner>
     <Banner></Banner>
     <Ourimpact></Ourimpact>
-    <Lendingsolutions></Lendingsolutions>
+    <Projects></Projects>
     <Contactform></Contactform>
   </Layout>
 )

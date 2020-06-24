@@ -2,7 +2,7 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import React from "react"
-import "./lendingsolutions.css"
+import "./projects.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap';
 import ReactPlayer from 'react-player'
@@ -10,7 +10,7 @@ import sal from 'sal.js'
 import  '../../sal.css';
  sal();
 
-class LendingsolutionsData extends React.Component {
+class ProjectsData extends React.Component {
 
   render() {
     const { data } = this.props
@@ -61,11 +61,11 @@ class LendingsolutionsData extends React.Component {
     )
   }
 }
-LendingsolutionsData.propTypes = {
+ProjectsData.propTypes = {
 data: PropTypes.object,
 }
 
-export default function Lendingsolutions(props) {
+export default function Projects(props) {
 return (
   <StaticQuery
     query={graphql`
@@ -123,7 +123,7 @@ return (
           }
         }
     `}
-    render={data => <LendingsolutionsData data={data} {...props} />}
+    render={data => <ProjectsData data={data} {...props} />}
   />
  ) 
 }
