@@ -26,7 +26,7 @@ class CovidbannerData extends React.Component {
                           .covid19Instruction,
                       }}
                   />
-                  <Link to="/risk-analytics" className="link" data-sal-duration="600" data-sal="fade" data-sal-easing="ease-out-bounce">{contentfulHome.link}</Link>
+                  <Link to="/project/risk-analytics" className="link" data-sal-duration="600" data-sal="fade" data-sal-easing="ease-out-bounce">{contentfulHome.link}</Link>
                </Col>
             </Row>
           </Container>
