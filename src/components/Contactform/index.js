@@ -74,36 +74,39 @@ render() {
                onSubmit={this.handleSubmit}
             >
             <Row>
-              <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+              <Col md="6" data-sal-duration="600" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                 <input type="hidden" name="form-name" value="contact" />
                 <Form.Group controlId="formBasicEmail" >
                     <Form.Label htmlFor="First Name">First Name <sup>*</sup></Form.Label>
-                    <Form.Control type="text" name="form.firstname" placeholder="First Name" onChange={this.handleChange} />
+                    <Form.Control type="text" name="form.firstname" placeholder="First Name" onChange={this.handleChange} required />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Last Name">Last Name <sup>*</sup></Form.Label>
-                    <Form.Control type="tex" name="form.lastname" placeholder="Last Name"  onChange={this.handleChange} />
+                    <Form.Control type="tex" name="form.lastname" placeholder="Last Name"  onChange={this.handleChange}required />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Email">Email <sup>*</sup></Form.Label>
-                    <Form.Control type="email" name="form.email" placeholder="Email Address"  onChange={this.handleChange} />
+                    <Form.Control type="email" name="form.email" placeholder="Email Address"  onChange={this.handleChange} required />
                   </Form.Group>
               </Col>
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Message">Message <sup>*</sup></Form.Label>
-                    <Form.Control as="textarea" name="form.message" onChange={this.handleChange} />
+                    <Form.Control as="textarea" name="form.message" onChange={this.handleChange} required />
                   </Form.Group>
               </Col>
-              <Col md="12" className="mb-3 mt-2" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
+              <Col md="6" className="mb-3 mt-2 recaptchad" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Recaptcha
                       ref="recaptcha"
                       sitekey={"6LeHT6gZAAAAAC88WSw7jF7k97sillbbMOrwWgco"}
                       onChange={this.handleRecaptcha}
                   />
-                  {this.state.errcaptcha && <p className="text-danger">Captcha is required</p>}
+                  
+                  {this.state.errcaptcha && <div class="alert alert-danger" role="alert">Captcha is required</div>}
+                  
+                  
               </Col>
-              <Col data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
+              <Col md="12" data-sal-duration="900" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
                   <Button type="submit" className="button">
                     Submit
                   </Button>
