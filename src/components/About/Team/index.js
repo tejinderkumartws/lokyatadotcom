@@ -27,7 +27,7 @@ export default function Team({ teamrole }) {
               memberDesignation
               linkdin
               image {
-                fluid {
+                fluid (maxWidth: 239){
                   tracedSVG
                   srcWebp
                   srcSet

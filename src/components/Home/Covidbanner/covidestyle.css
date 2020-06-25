@@ -5,18 +5,15 @@
   overflow: hidden;
 }
 .covidbanner h6{
-  font-weight:400;
+  font-weight:200;
   font-size: 1.4em;
   line-height: 1.3em;
-  letter-spacing:1px;
 }
 .covidbanner a{
   font-weight:400;
   font-size: 1.4em;
-  line-height: 1.3em;
   letter-spacing:1px;
   color:#434343;
-  font-family: 'Oswald', sans-serif;
 }
 .covidbanner a:hover{
   text-decoration:none;

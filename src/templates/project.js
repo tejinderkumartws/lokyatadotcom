@@ -32,12 +32,13 @@ export const pageQuery = graphql`
           }
           imagePosition
           image {
-            fluid {
+            fluid (maxWidth: 2000){
               base64
               tracedSVG
               srcWebp
               srcSetWebp
               src
+              sizes
             }
             title
           }

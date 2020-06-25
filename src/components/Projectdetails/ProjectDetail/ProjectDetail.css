@@ -2,10 +2,13 @@
 	padding-top:70px;
 	padding-bottom:70px;
 }
+.Lendingdetails-min h2{
+   font-weight: 800;
+}
 .Lendingdetails-min h2 b{
    color:#3676f7;
    font-family: 'Oswald', sans-serif;
-   font-weight: 500;
+   font-weight: 600;
    letter-spacing:1px;
 }
 .PurpleGradient {
@@ -19,15 +22,16 @@
 .productdetails{
 	margin-top:40px;
 }
-.productdetails h4, .ScheduleDemo h4{
-	letter-spacing:1px;
+.productdetails h4, .ScheduleDemo h4, .productdetails h3{
+   letter-spacing:1px;
+   font-weight: 700;
 }
 .ScheduleDemo {
 	padding-top:60px;
 	padding-bottom:20px;
 }
 .ScheduleDemo h4 {
-	font-weight: 400;
+	font-weight: 700;
 	display: block;
 }
 .productdetails.Left .text_order {
@@ -55,13 +59,16 @@
    flex: 0 0 100%;
    max-width: 100%;
 }
-.Liskanadetails_min h4 b{
-   font-weight: 500;
+
+.productdetails h3 b, 
+.productdetails.Center b{
+   font-weight: 700;
    color:#ED7D31;
 }
-.Full .img-fluid {
+
+/* .Full .img-fluid {
    width: 100vh;
-}
+} */
 
 @media (max-width: 769px) {
    .productdetails.Left .text_order {

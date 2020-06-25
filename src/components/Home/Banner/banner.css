@@ -7,9 +7,10 @@
 .banner-min h1{
 	font-size:2.75rem;
 	letter-spacing:1px;
+	font-weight:700;
 }
 .banner-min h2{
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing:2px;
 }
 .player-wrapper {
