@@ -52,8 +52,8 @@
 	transition-duration: .35s;
 }
 @media (max-width: 568px) {
-  .covidbanner a{
-	font-size:16px;
+  .covidbanner a, .covidbanner h6{
+	font-size:18px;
 	letter-spacing:0px;
    }
 }

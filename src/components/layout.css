@@ -719,8 +719,10 @@ p:empty {
     padding-top:15px;
     padding-bottom:15px;
   }
-
 }
+
+
+  
 @media (max-width: 568px) {
    .button{
      font-size:.68rem;

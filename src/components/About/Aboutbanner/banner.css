@@ -35,3 +35,8 @@
 		height:auto;
 	}
 }
+@media (max-width: 767px) {
+	.about-text span{
+		font-size: 1.2em;
+	}
+}

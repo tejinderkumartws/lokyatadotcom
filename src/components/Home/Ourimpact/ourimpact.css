@@ -26,11 +26,24 @@
 	color:#666;
 	font-style:normal;
 }
+@media (max-width: 1200px) {
+	.ourimpact-min span{
+		font-size: 2rem;
+	}
+	.ourimpact-min em{
+		font-size: 1.2em;
+	}
+}
 @media (max-width: 769px) {
-	.ourimpact-min strong{
+	.ourimpact-min span{
 		font-size:1.85rem;
 	}
-	.ourimpact-min span{
+	.ourimpact-min em{
 		font-size: 0.95rem;
+	}
+}
+@media (max-width: 568px) {
+	.ourimpact-min h3{
+		font-size: 2.3em;
 	}
 }
