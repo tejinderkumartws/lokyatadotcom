@@ -23,31 +23,31 @@ class ProjectDetail extends React.Component {
       <div className="Lendingdetails-min">
           <Container>
             <Row>
-               <Col sm="12" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-expo" >
+               <Col sm="12" className="top-section" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-expo" >
                    <h2 className="mb-4 h2" dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionHeadingRichTextNode.childContentfulRichText.html }} />
-                   <div dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionRichTextNode.childContentfulRichText.html }} />
-                   <Link to="/contact" className="button">Schedule a Demo &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></Link>
+                   <div className="top_text" dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionRichTextNode.childContentfulRichText.html }} />
+                   <Link to="/contact" className="button mt-2">Schedule a Demo &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></Link>
                </Col>
             </Row>
           </Container>
           {data.projectBlockReference.map((block) => (
-            <div className={`productdetails pt-4 ${block.blockBackground} ${block.imagePosition}`}>
+            <div className={`productdetails pt-4 ${block.blockBackground} ${block.imagePosition}`} >
                 <Container>
                   {block.childContentfulProjectBlockBlockTitleRichTextNode &&
-                  <Row className="align-items-center">
+                  <Row className="align-items-center center-dev" data-sal-duration="600" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-expo">
                       <Col lg="12">
                         <h2 className="mb-4 h2 text-center" dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockTitleRichTextNode.childContentfulRichText.html }} />
                       </Col>
                   </Row>
                   }
                   <Row className="align-items-center">  
-                    <Col lg={block.imagePosition==="Full" ? "12" : "6"} className="pl-lg-4 pr-lg-5 text_order" data-sal-duration="1000" data-sal={(block.imagePosition==="Left" ? "slide-up": "slide-up")} data-sal-delay="100" data-sal-easing="ease-out-expo">
+                    <Col lg={(12-block.imageColumnWidth)} className="pl-lg-4 pr-lg-5 text_order full-d"  data-sal={(block.imagePosition==="Left" ? "": "")}  >
                       {block.childContentfulProjectBlockBlockDescriptionRichTextNode && 
                       <div dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockDescriptionRichTextNode.childContentfulRichText.html }} 
                       />
                       } 
                     </Col>
-                    <Col lg={block.imagePosition==="Full" ? "12" : "6"} className="pr-lg-5" data-sal-duration="1000" data-sal={(block.imagePosition==="Left" ? "slide-up": "slide-up")} data-sal-easing="ease-out-expo" >
+                    <Col lg={(block.imageColumnWidth)} className="pr-lg-5" data-sal-duration="" data-sal={(block.imagePosition==="Left" ? "": "")}>
                       <img className="img-fluid" src={block.image.fluid.src} alt={block.image.title} />
                     </Col>
                   </Row>

@@ -3,16 +3,22 @@
 	height:500px;
 	overflow: hidden;
 }
-
+.about-text h1{
+	color:#6cb1d2;
+	font-weight: 600;
+}
 .about_banner img{
 	width:100%;
-	top:-120px !important;
+	/* top: -97px !important;
+    position: absolute; */
 }
 .about-text{
 	padding:80px 0 70px;
 }
 .about-text span{
-	font-size:18px;
+	font-size:1.8em;
+	line-height: 1.5em;
+	font-weight: 200;
 }
 @media (max-width: 1200px) {
 	.about_banner img{

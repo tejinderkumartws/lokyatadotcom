@@ -6,10 +6,11 @@
 }
 .Contactform h4{
 	font-weight:700;
+	font-size: 3.1em;
 }
 .Contactform span{
-   font-size:20px;
-   font-weight: 300;
+   font-size:1.75em;
+   font-weight: 200;
 }
 .Contactform Form {
 	padding-top:40px;

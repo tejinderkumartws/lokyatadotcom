@@ -10,9 +10,8 @@
   line-height: 1.3em;
 }
 .covidbanner a{
-  font-weight:400;
+  font-weight:600;
   font-size: 1.4em;
-  letter-spacing:1px;
   color:#434343;
 }
 .covidbanner a:hover{

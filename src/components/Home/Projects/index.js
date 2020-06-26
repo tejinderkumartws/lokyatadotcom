@@ -19,9 +19,13 @@ class ProjectsData extends React.Component {
       <div className="lendingsolutions text-center ">
           <Container>
             <Row>
-              <Col>
-                  <h3 className="mb-lg-4 h2" data-sal-duration="500" data-sal="slide-up"  data-sal-easing="ease-out-bounce">{contentfulHome.buildDigital.buildDigital}</h3>
-                  <p className="w-75 m-auto pb-3 pt-1" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce" 
+              <Col md="12">
+                  <h3 className="mb-lg-4 h2" data-sal-duration="500" data-sal="slide-up"  data-sal-easing="ease-out-bounce" dangerouslySetInnerHTML={{
+                      __html:
+                      contentfulHome.buildDigital
+                          .childContentfulRichText.html,
+                    }}/>
+                  <p className="m-auto pb-3 pt-4" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce" 
                   dangerouslySetInnerHTML={{
                       __html:
                       contentfulHome.lokyataProvides
@@ -29,16 +33,18 @@ class ProjectsData extends React.Component {
                       }} />
               </Col>
             </Row>
-            <Row>
+            <Row className="project-d">
               {data.allContentfulProject.nodes.map(project => (
               <Col lg="6" className="pt-4" data-sal-duration="600" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
-                <div className="img-d">
-                  <img src={project.homeIconImage.fluid.src} />
-                </div>
-                <h4 style={{textTransform: "uppercase"}}>{project.title} </h4>
-                <div dangerouslySetInnerHTML={{ __html: project.homeBlockDescription.childContentfulRichText.html }} 
-                      />
-                <Link className="button mt-4" to={`/project/${project.slug}`}>Learn More About {project.title}</Link>
+                <Link to={`/project/${project.slug}`}>
+                    <div className="img-d">
+                      <img src={project.homeIconImage.fluid.src} />
+                    </div>
+                    <h4 style={{textTransform: "uppercase"}}>{project.title} </h4>
+                    <div dangerouslySetInnerHTML={{ __html: project.homeBlockDescription.childContentfulRichText.html }} 
+                          />
+                </Link>
+                <Link className="button mt-2" to={`/project/${project.slug}`}>Learn More About {project.title}</Link>
               </Col>
 
               ))}
@@ -47,13 +53,22 @@ class ProjectsData extends React.Component {
                 <div className="player-wrapper mt-5" id="videodev">
                   <ReactPlayer
                     className="react-player"
-                    url={contentfulHome.youtube.file.url}
+                    // url="https://www.youtube.com/embed/R8qN1WL5RKg?controls=0&rel=0&enablejsapi=1&origin=https%3A%2F%2Fwww.lokyata.com&widgetid=1"
+                    url={contentfulHome.homeVideoYouTubLink}
                     width="100%"
                     height="100%"
                     controls
+                   
                     muted
+                    config={{ file: { attributes: {
+                      autoPlay: true,
+                      muted: true,
+                      loop: true,
+                      
+                    }}}}
                   />
                 </div>
+                
               </Col>
             </Row>
           </Container>
@@ -72,16 +87,14 @@ return (
       query LendingMyQuery {
           contentfulHome {
             buildDigital {
-              buildDigital
+              childContentfulRichText {
+                html
+              }
             }
             lokyataProvides {
               lokyataProvides
             }
-            youtube {
-              file {
-                url
-              }
-            }
+            homeVideoYouTubLink
           }
           allFile(filter: {relativePath: {in: ["analytics-1.png", "lendingDecisions-1.png"]}}) {
             nodes {
@@ -101,7 +114,8 @@ return (
               }
             }
           }
-          allContentfulProject {
+          allContentfulProject(sort: {fields: projectPositionInList, order: ASC})
+           {
             nodes {
               title
               slug

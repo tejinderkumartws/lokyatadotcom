@@ -211,7 +211,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-family: 'Muli', sans-serif;
-  font-size:15px;
+  font-size:16px;
   color:#434343;
   font-weight: normal;
 }
@@ -693,7 +693,7 @@ pre tt:after {
     text-decoration:none;
   } 
   body{
-    padding-top:80px;
+    padding-top:69px;
   }
 .product-banner{
     background:url(../images/earth.jpg) no-repeat;
@@ -703,7 +703,9 @@ pre tt:after {
 .thanks-min {
   height:calc(100vh - 315px);
 }
-
+p:empty {
+  display: none;
+}
 @media only screen and (min-width: 1400px) {
   .product-banner{
     padding:10% 0;
@@ -711,7 +713,7 @@ pre tt:after {
 }
 @media (max-width: 769px) {
    body{
-    padding-top:76px;
+    padding-top:69px;
    }
    .navbar-collapse{
     padding-top:15px;

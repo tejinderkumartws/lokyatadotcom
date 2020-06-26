@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap'
+import CountUp from 'react-countup';
 import "./ourimpact.css"
 import sal from 'sal.js'
 import  '../../sal.css';
@@ -12,29 +13,63 @@ class OurimpactData extends React.Component {
   render() {
     const { data } = this.props
     const { contentfulHomeOurImpactTextNode } = data
+    
     return (
       <div className="ourimpact-min text-center ">
           <Container>
             <Row>
                <Col>
-                   <h3 className="mb-lg-4 h1" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
+                   <h3 className="mb-lg-5 h1" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
                </Col>
             </Row>
             <Row>
                <Col md="4" className="mt-3" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
-                   <strong>4,800,000 +</strong>
-                   <span>Loans Scored</span>
+                  <div className="d-flex justify-content-center">
+                    <CountUp
+                      start={1000}
+                      end={4800.000}
+                      separator=", "
+                      delay={2} 
+                      decimals={3}
+                      decimal=","
+                    >
+                    </CountUp>
+                    <span>+</span>
+                  </div>
+                  <em>Loans Scored</em>
                </Col>
                <Col md="4" className="mt-4 pt-lg-3" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
-                   <strong>1,300,000 +</strong>
-                   <span>Loans Disbursed</span>
+                  <div className="d-flex justify-content-center">
+                    <CountUp
+                      start={1500}
+                      end={1300.000}
+                      separator=", "
+                      decimals={3}
+                      delay={2} 
+                      decimal=","
+                    > 
+                    </CountUp>
+                    <span>+</span>
+                  </div>
+                  <em>Loans Disbursed</em>
                </Col>
                <Col md="4" className="mt-4 pt-lg-5" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
-                   <strong>200,000 +</strong>
-                   <span>Customers Impacted</span>
+                  <div className="d-flex justify-content-center">
+                    <CountUp
+                      start={1900}
+                      end={200.000}
+                      decimals={3}
+                      delay={2} 
+                      decimal=","
+                    >
+                    </CountUp>
+                    <span>+</span>
+                  </div>
+                  <em>Customers Impacted</em>
                </Col>
             </Row>
           </Container>
+          
       </div>
    )
   }

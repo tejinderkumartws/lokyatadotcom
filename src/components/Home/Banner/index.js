@@ -14,37 +14,55 @@ import { faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 library.add(faPlayCircle);
  sal();
 class BannerData extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      loadvideo: false
+    }
+    this.isvideoloaded = this.isvideoloaded.bind(this);
+  }
+
+  isvideoloaded() {
+    this.setState({loadvideo:true})
+  }
+
   render() {
     const { data } = this.props
     const { contentfulHome } = data
     return (
       <div className="banner-min">
-          <div className="position-relative">
+          {!this.state.loadvideo && 
+            <div className="banner_loader_img">&nbsp;</div>
+          }
+          <div className={"position-relative "+(this.state.loadvideo ? 'd-block' : 'd-none')}>
             <div className="player-wrapper ">
               <ReactPlayer
                   className="react-player"
-                  url={contentfulHome.youtube.file.url}
+                  url={contentfulHome.bannerVideoYoutubeLink}
+                  // url="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
                   width="100%"
                   height="100%"
                   playing
                   muted
                   loop
+                  controls
+                  onPlay={() => this.isvideoloaded()}
                  
                   config={{ file: { attributes: {
                     autoPlay: true,
                     muted: true,
                     loop: true,
+                    controls: false,
                   }}}}
               />
             </div>
-            
           </div>
           <div className="banner-text">
               <Container>
                 <Row>
                   <Col sm="12" >
-                    <h1 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">{contentfulHome.betterDecisions}</h1>
-                   
+                    <h1 className="mb-1" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">{contentfulHome.betterDecisions}</h1>
                     <h2 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">{contentfulHome.childContentfulHomeAiDrivenLendingDecisionTextNode.aiDrivenLendingDecision}</h2>
                     <button onClick={() => scrollTo('#videodev')} className="button mt-4"  data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
                   </Col>
@@ -68,11 +86,7 @@ return (
               childContentfulHomeAiDrivenLendingDecisionTextNode {
                 aiDrivenLendingDecision
               }
-              youtube {
-                file {
-                  url
-                }
-              }
+              bannerVideoYoutubeLink
               betterDecisions
             }
           }

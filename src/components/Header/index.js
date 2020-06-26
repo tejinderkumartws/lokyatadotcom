@@ -24,7 +24,7 @@ class HeaderData extends React.Component {
                     <Link to="/" activeClassName="active " >Home</Link>
                     <NavDropdown title="Products" id="basic-nav-dropdown">
                       {data.allContentfulProject.nodes.map(project => (
-                        <Link className="dropdown-item" to={`/project/${project.slug}`}>{project.title}</Link>
+                        <Link className="dropdown-item" to={`/project/${project.slug}`}>{project.pageLink}</Link>
                       ))}
                     </NavDropdown>
                     <Link to="/about" activeClassName="active " >About</Link>
@@ -48,9 +48,9 @@ return (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
-          allContentfulProject {
+          allContentfulProject(sort: {fields: projectPositionInList, order: ASC}) {
             nodes {
-              title
+              pageLink
               slug
             }
           }
