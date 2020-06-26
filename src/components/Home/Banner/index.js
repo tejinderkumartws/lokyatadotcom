@@ -40,7 +40,7 @@ class BannerData extends React.Component {
               <ReactPlayer
                   className="react-player"
                   url={contentfulHome.bannerVideoYoutubeLink}
-                  // url="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
+                  //  url="https://youtu.be/R8qN1WL5RKg?t=79:controls=0"
                   width="100%"
                   height="100%"
                   playing
@@ -53,7 +53,7 @@ class BannerData extends React.Component {
                     autoPlay: true,
                     muted: true,
                     loop: true,
-                    controls: false,
+                    
                   }}}}
               />
             </div>

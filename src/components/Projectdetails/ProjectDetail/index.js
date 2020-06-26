@@ -31,23 +31,23 @@ class ProjectDetail extends React.Component {
             </Row>
           </Container>
           {data.projectBlockReference.map((block) => (
-            <div className={`productdetails pt-4 ${block.blockBackground} ${block.imagePosition}`} >
+            <div className={`productdetails pt-4 ${block.blockBackground} ${block.imagePosition}`}>
                 <Container>
                   {block.childContentfulProjectBlockBlockTitleRichTextNode &&
-                  <Row className="align-items-center center-dev" data-sal-duration="600" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-expo">
+                  <Row className="align-items-center center-dev">
                       <Col lg="12">
                         <h2 className="mb-4 h2 text-center" dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockTitleRichTextNode.childContentfulRichText.html }} />
                       </Col>
                   </Row>
                   }
                   <Row className="align-items-center">  
-                    <Col lg={(12-block.imageColumnWidth)} className="pl-lg-4 pr-lg-5 text_order full-d"  data-sal={(block.imagePosition==="Left" ? "": "")}  >
+                    <Col lg={(12-block.imageColumnWidth)} className="pl-lg-4 pr-lg-5 text_order full-d" data-sal-duration="800" data-sal={(block.imagePosition==="Left" ? "zoom-in": "zoom-in")} data-sal-delay="300" data-sal-easing="ease-out-expo">
                       {block.childContentfulProjectBlockBlockDescriptionRichTextNode && 
                       <div dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockDescriptionRichTextNode.childContentfulRichText.html }} 
                       />
                       } 
                     </Col>
-                    <Col lg={(block.imageColumnWidth)} className="pr-lg-5" data-sal-duration="" data-sal={(block.imagePosition==="Left" ? "": "")}>
+                    <Col lg={(block.imageColumnWidth)} className="pr-lg-5" data-sal-duration="300" data-sal={(block.imagePosition==="Left" ? "zoom-in": "zoom-in")} data-sal-delay="100" data-sal-easing="easeOutBack">
                       <img className="img-fluid" src={block.image.fluid.src} alt={block.image.title} />
                     </Col>
                   </Row>
@@ -59,7 +59,7 @@ class ProjectDetail extends React.Component {
                <Container>
                  <Row>
                     <Col>
-                       <h4 className="h3 mb-4 pl-lg-5 pr-lg-5" data-sal-duration="1300" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo">
+                       <h4 className="h3 mb-4 pl-5 pr-5" data-sal-duration="1300" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo">
                          <div dangerouslySetInnerHTML={{ __html: data.childContentfulProjectCovid19BlockDescriptionRichTextNode.childContentfulRichText.html }} />
                        </h4>
                        <Link to="/contact" className="button mt-4 " data-sal-duration="1300" data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease-out-expo">Schedule a Demo &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></Link>
