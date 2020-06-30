@@ -24,15 +24,15 @@ class OurimpactData extends React.Component {
             </Row>
             <Row>
                <Col md="4" className="mt-3" data-sal-duration="500" data-sal="zoom-in"  data-sal-easing="easeInSine">
-                  <div className="d-flex justify-content-center">
-                    <CountUp
+                  <div className="d-flex justify-content-center" >
+                    <CountUp 
                       start={1}
                       end={4800.000}
                       separator=","
                       delay={1} 
                       decimals={3}
                       decimal=","
-                      duration="900"
+                      duration={30}
                     >
                     </CountUp>
                     <span>+</span>
@@ -48,7 +48,7 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={1}  
                       decimal=","
-                      duration="900"
+                      duration={30}
                     > 
                     </CountUp>
                     <span>+</span>
@@ -63,7 +63,8 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={1}  
                       decimal=","
-                      duration="900"
+                      duration={30}
+                      useEasing={true}
                     >
                     </CountUp>
                     <span>+</span>
