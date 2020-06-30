@@ -19,48 +19,57 @@ class OurimpactData extends React.Component {
           <Container>
             <Row>
                <Col>
-                   <h3 className="mb-lg-5 h1" data-sal-duration="1000" data-sal="slide-up"  data-sal-easing="ease-out-bounce">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
+                   <h3 className="mb-lg-5 h1" data-sal-duration="1000" data-sal="zoom-in"  data-sal-easing="easeInSine">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
                </Col>
             </Row>
             <Row>
-               <Col md="4" className="mt-3" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+               <Col md="4" className="mt-3" data-sal-duration="500" data-sal="zoom-in"  data-sal-easing="easeInSine">
                   <div className="d-flex justify-content-center">
                     <CountUp
                       start={1000}
                       end={4800.000}
-                      separator=", "
+                      separator=","
                       delay={2} 
                       decimals={3}
                       decimal=","
+                      duration={9}
+                      useEasing={true}
+                      useGrouping={true}
                     >
                     </CountUp>
                     <span>+</span>
                   </div>
                   <em>Loans Scored</em>
                </Col>
-               <Col md="4" className="mt-4 pt-lg-3" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
+               <Col md="4" className="mt-4 pt-lg-3" data-sal-duration="500" data-sal="zoom-in" data-sal-delay="100" data-sal-easing="easeInSine">
                   <div className="d-flex justify-content-center">
                     <CountUp
                       start={1500}
                       end={1300.000}
-                      separator=", "
+                      separator=","
                       decimals={3}
-                      delay={2} 
+                      delay={2}  
                       decimal=","
+                      duration={9}
+                      useEasing={true}
+                      useGrouping={true}
                     > 
                     </CountUp>
                     <span>+</span>
                   </div>
                   <em>Loans Disbursed</em>
                </Col>
-               <Col md="4" className="mt-4 pt-lg-5" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">
+               <Col md="4" className="mt-4 pt-lg-5" data-sal-duration="500" data-sal="zoom-in" data-sal-delay="200" data-sal-easing="easeInSine">
                   <div className="d-flex justify-content-center">
                     <CountUp
                       start={1900}
                       end={200.000}
                       decimals={3}
-                      delay={2} 
+                      delay={2}  
                       decimal=","
+                      duration={9}
+                      useEasing={true}
+                      useGrouping={true}
                     >
                     </CountUp>
                     <span>+</span>

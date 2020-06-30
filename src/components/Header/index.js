@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import Logo from "../logo"
+// import Logo from "../logo"'
+import Logo from '../../images/logo.png'
 import "./header.css"
 
 class HeaderData extends React.Component {
@@ -16,7 +17,7 @@ class HeaderData extends React.Component {
             <Row>
               <Navbar expand="lg" className="w-100" >
                 <Navbar.Brand className="position-relative header-logo">
-                 <Link><Logo /></Link> 
+                 <Link to="/"><img className="mb-0" src={Logo} alt="Logo" /></Link> 
                   </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

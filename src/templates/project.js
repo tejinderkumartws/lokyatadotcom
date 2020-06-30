@@ -32,8 +32,9 @@ export const pageQuery = graphql`
           }
           imagePosition
           imageColumnWidth
+          animation
           image {
-            fluid(maxWidth: 1100){
+            fluid(maxWidth: 1900){
               base64
               tracedSVG
               srcWebp

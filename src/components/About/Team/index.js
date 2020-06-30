@@ -50,7 +50,7 @@ export default function Team({ teamrole }) {
                     {data.allContentfulTeam.nodes.map((node)=> (
                       <>
                       {node.memberRole === teamrole &&
-                      <Col md="3" sm="6" className="mt-3" data-sal-duration="350" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+                      <Col md="3" sm="6" className="mt-3" data-sal-duration="700" data-sal="slide-up" data-sal-delay="200" data-sal-easing="easeInSine">
                       <Img className="team-img"
                           fluid={node.image.fluid}
                       />

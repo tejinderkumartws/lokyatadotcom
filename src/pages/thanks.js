@@ -8,12 +8,12 @@ class Thankspage extends React.Component {
     return (
       <Layout>
          <SEO title="Thanks" />
-          <div className="text-center thanks-min d-flex align-items-center">
+          <div className="text-left thanks-min d-flex align-items-center">
               <Container className="">
                 <Row>
                   <Col sm="12">
-                      <h1 className="mb-3 mt-3">Thank you!</h1>
-                      <p>Your contact information has been received and we will contact you soon.</p>
+                      <h1 className="mb-3 mt-3">Thanks!</h1>
+                      <p>We will be in touch with you via email shortly.</p>
                   </Col>
                 </Row>
               </Container>

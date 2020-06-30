@@ -23,8 +23,8 @@ class ProjectDetail extends React.Component {
       <div className="Lendingdetails-min">
           <Container>
             <Row>
-               <Col sm="12" className="top-section" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-expo" >
-                   <h2 className="mb-4 h2" dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionHeadingRichTextNode.childContentfulRichText.html }} />
+               <Col sm="12" className="top-section"  >
+                   <h2 className="mb-4 h2" data-sal-duration="900" data-sal="zoom-in" data-sal-delay="200" data-sal-easing="easeInOutBack"  dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionHeadingRichTextNode.childContentfulRichText.html }} />
                    <div className="top_text" dangerouslySetInnerHTML={{ __html: data.childContentfulProjectDescriptionRichTextNode.childContentfulRichText.html }} />
                    <Link to="/contact" className="button mt-2">Schedule a Demo &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></Link>
                </Col>
@@ -36,18 +36,18 @@ class ProjectDetail extends React.Component {
                   {block.childContentfulProjectBlockBlockTitleRichTextNode &&
                   <Row className="align-items-center center-dev">
                       <Col lg="12">
-                        <h2 className="mb-4 h2 text-center" dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockTitleRichTextNode.childContentfulRichText.html }} />
+                        <h2 className="mb-4 h2 text-center" data-sal-duration="600" data-sal="zoom-in" data-sal-delay="300" data-sal-easing="easeInSine" dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockTitleRichTextNode.childContentfulRichText.html }} />
                       </Col>
                   </Row>
                   }
                   <Row className="align-items-center">  
-                    <Col lg={(12-block.imageColumnWidth)} className="pl-lg-4 pr-lg-5 text_order full-d" data-sal-duration="800" data-sal={(block.imagePosition==="Left" ? "zoom-in": "zoom-in")} data-sal-delay="300" data-sal-easing="ease-out-expo">
+                    <Col lg={(12-block.imageColumnWidth)} className="pl-lg-4 pr-lg-5 text_order full-d" data-sal-duration="600" data-sal={(block.imagePosition==="Left" ? "zoom-in": "zoom-in")} data-sal-delay="200" data-sal-easing="easeInSine">
                       {block.childContentfulProjectBlockBlockDescriptionRichTextNode && 
                       <div dangerouslySetInnerHTML={{ __html: block.childContentfulProjectBlockBlockDescriptionRichTextNode.childContentfulRichText.html }} 
                       />
                       } 
                     </Col>
-                    <Col lg={(block.imageColumnWidth)} className="pr-lg-5" data-sal-duration="300" data-sal={(block.imagePosition==="Left" ? "zoom-in": "zoom-in")} data-sal-delay="100" data-sal-easing="easeOutBack">
+                    <Col lg={(block.imageColumnWidth)} className="pr-lg-5" data-sal-duration="600" data-sal={(block.animation)} data-sal-delay="100" data-sal-easing="easeInSine">
                       <img className="img-fluid" src={block.image.fluid.src} alt={block.image.title} />
                     </Col>
                   </Row>

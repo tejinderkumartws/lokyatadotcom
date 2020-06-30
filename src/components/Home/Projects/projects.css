@@ -44,6 +44,13 @@
 	font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.5em;
+	color:#404248;
+	padding-left:19px;
+	padding-right:19px;
+}
+.project-d .col-lg-6:nth-child(2) p{
+	padding-left:31px;
+	padding-right:31px;
 }
 .project-d a:hover{
 	text-decoration:none;
@@ -53,8 +60,32 @@
 	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
   }
   
-  .react-player {
+.react-player {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+.hide-lg{
+	display:none;
+}
+  @media (max-width:1200px) {
+	.lendingsolutions a{
+		font-size:14px;
+	}
+  }
+  @media (max-width:767px) {
+	.project-d .col-lg-6:nth-child(2) p, .project-d p{
+		padding-left:0px;
+		padding-right:0px;
+	} 
+	.hide-lg{
+		display:block;
+	} 
+	.hide-mobile{
+		display: none;
+	}
+	.lendingsolutions a{
+		width:170px;
+		margin:0px auto;
+	}
   }

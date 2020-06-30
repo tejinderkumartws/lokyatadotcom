@@ -698,12 +698,21 @@ pre tt:after {
 .product-banner{
     background:url(../images/earth.jpg) no-repeat;
     background-size:cover;
-    padding:15% 0;
+    padding:14% 0;
 }
 .thanks-min {
   height:calc(100vh - 315px);
+  background:#3676f7;
+  color:#fff;
+}
+.thanks-min p{
+  font-size:1.2em;
+  font-weight: 300;
 }
 p:empty {
+  display: none;
+}
+p:blank {
   display: none;
 }
 @media only screen and (min-width: 1400px) {

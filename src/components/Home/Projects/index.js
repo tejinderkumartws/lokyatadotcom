@@ -20,12 +20,12 @@ class ProjectsData extends React.Component {
           <Container>
             <Row>
               <Col md="12">
-                  <h3 className="mb-lg-4 h2" data-sal-duration="500" data-sal="slide-up"  data-sal-easing="ease-out-bounce" dangerouslySetInnerHTML={{
+                  <h3 className="mb-lg-4 h2" data-sal-duration="500" data-sal="zoom-in"  data-sal-easing="easeOutElastic" dangerouslySetInnerHTML={{
                       __html:
                       contentfulHome.buildDigital
                           .childContentfulRichText.html,
                     }}/>
-                  <p className="m-auto pb-3 pt-4" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce" 
+                  <p className="m-auto pb-3 pt-4" 
                   dangerouslySetInnerHTML={{
                       __html:
                       contentfulHome.lokyataProvides
@@ -35,16 +35,17 @@ class ProjectsData extends React.Component {
             </Row>
             <Row className="project-d">
               {data.allContentfulProject.nodes.map(project => (
-              <Col lg="6" className="pt-4" data-sal-duration="600" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+              <Col lg="6" className="pt-4">
                 <Link to={`/project/${project.slug}`}>
-                    <div className="img-d">
+                    <div className="img-d"  data-sal-duration="600" data-sal="zoom-in" data-sal-delay="100" data-sal-easing="ease-out-bounce">
                       <img src={project.homeIconImage.fluid.src} />
                     </div>
-                    <h4 style={{textTransform: "uppercase"}}>{project.title} </h4>
+                    <h4 style={{textTransform: "uppercase"}}  data-sal-duration="600" data-sal="zoom-in" data-sal-delay="100" data-sal-easing="ease-out-bounce">{project.title} </h4>
                     <div dangerouslySetInnerHTML={{ __html: project.homeBlockDescription.childContentfulRichText.html }} 
                           />
                 </Link>
-                <Link className="button mt-2" to={`/project/${project.slug}`}>Learn More About {project.title}</Link>
+                <Link className="button mt-2 hide-mobile" to={`/project/${project.slug}`}>Learn More About {project.pageLink}</Link>
+                <Link className="button mt-2 hide-lg" to={`/project/${project.slug}`}>Learn More</Link>
               </Col>
 
               ))}
@@ -119,6 +120,7 @@ return (
             nodes {
               title
               slug
+              pageLink
               homeBlockDescription {
                 childContentfulRichText {
                   html
