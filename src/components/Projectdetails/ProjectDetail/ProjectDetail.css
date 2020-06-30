@@ -46,6 +46,8 @@
    display: block;
    color:#000000;
    font-size:2.4em;
+   padding-left: 8rem;
+   padding-right: 8rem;
 }
 .productdetails.Left .text_order {
    order:6 !important;
@@ -92,6 +94,7 @@
    padding:0px;
    margin:0px;
    font-weight: 200;
+   font-size: 1.11em;
 }
 .productdetails li p{
    font-weight: 200;

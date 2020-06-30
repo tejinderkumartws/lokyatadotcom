@@ -17,7 +17,7 @@ class ProjectTop extends React.Component {
           <Container>
             <Row>
                <Col sm="12">
-                  <h1 className="mb-1" data-sal-duration="1000" data-sal="slide-up" data-sal-easing="ease-out-expo">{data.pageTitle} </h1>
+                  <h1 className="mb-1" data-sal-duration="1800" data-sal="fade" data-sal-easing="easeInSine">{data.pageTitle} </h1>
                   <span className="d-block" data-sal-duration="1800" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo">{data.subtitle} </span>
                </Col>
             </Row>

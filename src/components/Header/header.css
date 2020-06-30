@@ -38,4 +38,8 @@ header .navbar-expand-lg .navbar-nav .dropdown-menu a{
   margin-right:0px;
   padding: 7px 14px;
   font-size:16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.dropdown-item:active {
+  background: transparent;
 }

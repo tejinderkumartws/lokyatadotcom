@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap'
+import img from '../images/rice-scaled2.jpg'
 class Thankspage extends React.Component {
   render() {
     return (
@@ -18,6 +19,8 @@ class Thankspage extends React.Component {
                 </Row>
               </Container>
           </div>
+          <img className="img-fluid mb-0" src={img} alt="img" />
+
       </Layout>
     )
   }

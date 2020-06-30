@@ -92,7 +92,7 @@ render() {
               <Col md="6" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="Message">Message <sup>*</sup></Form.Label>
-                    <Form.Control as="textarea" name="form.message" onChange={this.handleChange} required />
+                    <Form.Control as="textarea"  placeholder="Your Message" name="form.message" onChange={this.handleChange} required />
                   </Form.Group>
               </Col>
               <Col md="6" className="mb-3 mt-2 recaptchad" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease-out-bounce">
