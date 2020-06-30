@@ -8,14 +8,16 @@
 }
 .our-team h5{
 	font-weight: 600;
+	color:#404248;
 }
 .our-team span{
 	display: block;
 	padding-bottom:5px;
+	color:#404248;
 }
 .our-team a{
 	font-size:18px;
-	color:#434343;
+	color:#818a91;
 }
 .team-img{
 	width:70%;
