@@ -46,8 +46,6 @@
    display: block;
    color:#000000;
    font-size:2.4em;
-   padding-left: 8rem;
-   padding-right: 8rem;
 }
 .productdetails.Left .text_order {
    order:6 !important;
@@ -90,6 +88,9 @@
    font-weight: 700;
    color:#ED7D31 !important;
 }
+.productdetails ul{
+   padding-right:8%;
+}
 .productdetails li{
    padding:0px;
    margin:0px;
@@ -108,6 +109,11 @@
 }
 .productdetails .row{
    margin:0px ;
+}
+@media (max-width: 1200px) {
+   .productdetails ul{
+      padding-right:0%;
+   }
 }
 @media (max-width: 999px) {
    .productdetails.Full h2 {
@@ -129,6 +135,9 @@
    .productdetails .row{
       margin-right: -15px;
       margin-left: -15px;
+   }
+   .productdetails ul{
+      padding-right:0%;
    }
 }
 @media (max-width: 568px) {

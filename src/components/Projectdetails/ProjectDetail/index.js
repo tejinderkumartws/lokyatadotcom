@@ -59,7 +59,7 @@ class ProjectDetail extends React.Component {
                <Container>
                  <Row>
                     <Col>
-                       <h4 className="h3 mb-4" data-sal-duration="1300" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo">
+                       <h4 className="h3 mb-4 pl-lg-5 pr-lg-5" data-sal-duration="1300" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-expo">
                          <div dangerouslySetInnerHTML={{ __html: data.childContentfulProjectCovid19BlockDescriptionRichTextNode.childContentfulRichText.html }} />
                        </h4>
                        <Link to="/contact" className="button mt-4 " data-sal-duration="1300" data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease-out-expo">Schedule a Demo &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></Link>
