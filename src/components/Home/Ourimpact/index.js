@@ -32,7 +32,7 @@ class OurimpactData extends React.Component {
                       delay={1} 
                       decimals={3}
                       decimal=","
-                      duration={9}
+                      duration="900"
                     >
                     </CountUp>
                     <span>+</span>
@@ -48,7 +48,7 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={1}  
                       decimal=","
-                      duration={9}
+                      duration="900"
                     > 
                     </CountUp>
                     <span>+</span>
@@ -63,8 +63,7 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={1}  
                       decimal=","
-                      duration={9}
-                      useEasing={true}
+                      duration="900"
                     >
                     </CountUp>
                     <span>+</span>

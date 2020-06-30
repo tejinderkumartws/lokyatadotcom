@@ -50,7 +50,7 @@ export default function Aboutbanner(props) {
                   aTeamOf
                 }
                 banner {
-                  fluid {
+                  fluid (maxWidth: 1900){
                     src
                     sizes
                     tracedSVG
