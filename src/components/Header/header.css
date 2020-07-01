@@ -15,22 +15,23 @@ header{
 }
 .navbar-expand-lg .navbar-nav a, .navbar-light .navbar-nav .nav-link{
   font-weight:500;
-  color:#434343;
+  color:#404248;
   font-size:15px;
   padding:0px;
   margin-right:30px;
   font-size:16px;
 }
 
-.navbar-expand-lg .navbar-nav a:hover, .navbar-expand-lg .navbar-nav a.active{
+.navbar-expand-lg .navbar-nav a:hover, .navbar-expand-lg .navbar-nav a.active, #basic-nav-dropdown:hover{
   color:#6ec1e4;
   text-decoration:none;
+  outline:none;
 }
 
 header .dropdown-menu{
    border-radius:0px;
    padding:0px;
-   color:#434343;
+   color:#404248;
    min-width:8.5rem;
    text-align: center;
 }
@@ -40,6 +41,7 @@ header .navbar-expand-lg .navbar-nav .dropdown-menu a{
   font-size:16px;
   border-bottom: 1px solid #f0f0f0;
 }
-.dropdown-item:active {
+.dropdown-item:active, .dropdown-item:focus, .dropdown-item:hover {
   background: transparent;
+  outline:none;
 }

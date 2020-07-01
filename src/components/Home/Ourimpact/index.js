@@ -10,13 +10,20 @@ import  '../../sal.css';
    sal();
 class OurimpactData extends React.Component {
 
+  // handleScroll = e => {
+  //   let element = e.target
+  //   if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+  //     // do something at end of scroll
+  //   }
+  // }
+
   render() {
     const { data } = this.props
     const { contentfulHomeOurImpactTextNode } = data
     
     return (
       <div className="ourimpact-min text-center ">
-          <Container>
+          <Container onScroll={this.handleScroll}>
             <Row>
                <Col>
                    <h3 className="mb-lg-5 h1" data-sal-duration="1000" data-sal="zoom-in"  data-sal-easing="easeInSine">{contentfulHomeOurImpactTextNode.ourImpact}</h3>
@@ -25,14 +32,16 @@ class OurimpactData extends React.Component {
             <Row>
                <Col md="4" className="mt-3" data-sal-duration="500" data-sal="zoom-in"  data-sal-easing="easeInSine">
                   <div className="d-flex justify-content-center" >
+                  
                     <CountUp 
                       start={1}
                       end={4800.000}
                       separator=","
-                      delay={1} 
+                      delay={0} 
                       decimals={3}
                       decimal=","
-                      duration={30}
+                      duration={18}
+                      // onScroll={this.handleScroll}
                     >
                     </CountUp>
                     <span>+</span>
@@ -46,9 +55,9 @@ class OurimpactData extends React.Component {
                       end={1300.000}
                       separator=","
                       decimals={3}
-                      delay={1}  
+                      delay={0}  
                       decimal=","
-                      duration={30}
+                      duration={18}
                     > 
                     </CountUp>
                     <span>+</span>
@@ -61,10 +70,9 @@ class OurimpactData extends React.Component {
                       start={19}
                       end={200.000}
                       decimals={3}
-                      delay={1}  
+                      delay={0}  
                       decimal=","
-                      duration={30}
-                      useEasing={true}
+                      duration={18}
                     >
                     </CountUp>
                     <span>+</span>

@@ -23,7 +23,7 @@ class HeaderData extends React.Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
                     <Link to="/" activeClassName="active " >Home</Link>
-                    <NavDropdown title="Products" id="basic-nav-dropdown">
+                    <NavDropdown title="Products" id="basic-nav-dropdown" >
                       {data.allContentfulProject.nodes.map(project => (
                         <Link className="dropdown-item" to={`/project/${project.slug}`}>{project.pageLink}</Link>
                       ))}
