@@ -45,3 +45,10 @@ header .navbar-expand-lg .navbar-nav .dropdown-menu a{
   background: transparent;
   outline:none;
 }
+.header-logo a{
+  float: left;
+}
+
+.header-logo a:hover{
+  opacity: 0.9;
+}

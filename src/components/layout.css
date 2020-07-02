@@ -696,9 +696,9 @@ pre tt:after {
     padding-top:69px;
   }
 .product-banner{
-    background:url(../images/earth.jpg) no-repeat;
+    background:url(../images/earth.jpg) no-repeat center -70px;
     background-size:cover;
-    padding:14% 0;
+    padding:15% 0;
 }
 .thanks-min {
   padding:50px 0;
@@ -722,6 +722,12 @@ p:blank {
   .product-banner{
     padding:10% 0;
   }
+}
+@media (max-width: 1200px) {
+  .product-banner{
+    background-position: center top;
+    padding: 19% 0;
+  }  
 }
 @media (max-width: 769px) {
    body{

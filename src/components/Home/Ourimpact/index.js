@@ -4,10 +4,12 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col} from 'react-bootstrap'
 import CountUp from 'react-countup';
+
 import "./ourimpact.css"
 import sal from 'sal.js'
 import  '../../sal.css';
    sal();
+   
 class OurimpactData extends React.Component {
 
   // handleScroll = e => {
@@ -20,6 +22,8 @@ class OurimpactData extends React.Component {
   render() {
     const { data } = this.props
     const { contentfulHomeOurImpactTextNode } = data
+   
+    
     
     return (
       <div className="ourimpact-min text-center ">
@@ -32,7 +36,6 @@ class OurimpactData extends React.Component {
             <Row>
                <Col md="4" className="mt-3" data-sal-duration="500" data-sal="zoom-in"  data-sal-easing="easeInSine">
                   <div className="d-flex justify-content-center" >
-                  
                     <CountUp 
                       start={1}
                       end={4800.000}
@@ -40,11 +43,11 @@ class OurimpactData extends React.Component {
                       delay={0} 
                       decimals={3}
                       decimal=","
-                      duration={18}
+                      duration={3}
+                      suffix="+"
                       // onScroll={this.handleScroll}
                     >
                     </CountUp>
-                    <span>+</span>
                   </div>
                   <em>Loans Scored</em>
                </Col>
@@ -57,10 +60,10 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={0}  
                       decimal=","
-                      duration={18}
+                      duration={3}
+                      suffix="+"
                     > 
                     </CountUp>
-                    <span>+</span>
                   </div>
                   <em>Loans Disbursed</em>
                </Col>
@@ -72,10 +75,10 @@ class OurimpactData extends React.Component {
                       decimals={3}
                       delay={0}  
                       decimal=","
-                      duration={18}
+                      duration={3}
+                      suffix="+"
                     >
                     </CountUp>
-                    <span>+</span>
                   </div>
                   <em>Customers Impacted</em>
                </Col>

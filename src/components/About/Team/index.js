@@ -64,7 +64,6 @@ export default function Team({ teamrole }) {
                  </Row>
               </Container>
           </div>
-          
          </div>
       )}
     />

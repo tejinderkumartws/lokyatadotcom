@@ -20,6 +20,17 @@
 	line-height: 1.5em;
 	font-weight: 200;
 }
+
+@media (min-width: 1366px) {
+	.about_banner{
+		height:580px;
+	}
+}
+@media screen and (min-device-width: 1700px) and (max-device-width: 1920px)  {
+	.about_banner{
+		height:auto;
+	}
+}
 @media (max-width: 1200px) {
 	.about_banner img{
 		width:100%;

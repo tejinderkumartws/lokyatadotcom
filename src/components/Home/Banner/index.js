@@ -41,20 +41,17 @@ class BannerData extends React.Component {
                   className="react-player"
                   url={contentfulHome.bannerVideoYoutubeLink}
                   //  url="https://youtu.be/R8qN1WL5RKg?t=79:controls=0"
-                  width="100%"
-                  height="100%"
-                  playing
-                  muted
-                  loop
-                  controls
-                  onPlay={() => this.isvideoloaded()}
-                 
-                  config={{ file: { attributes: {
-                    autoPlay: true,
-                    muted: true,
-                    loop: true,
-                    
-                  }}}}
+                    width="100%"
+                    height="100%"
+                    playing
+                    muted
+                    loop
+                    onPlay={() => this.isvideoloaded()}
+                    config={{ file: { attributes: {
+                      autoPlay: true,
+                      muted: true,
+                      loop: true,
+                    }}}}
               />
             </div>
           </div>
