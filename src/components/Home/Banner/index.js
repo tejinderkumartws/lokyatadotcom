@@ -58,11 +58,11 @@ class BannerData extends React.Component {
           <div className="banner-text">
               <Container>
                 <Row>
-                  <Col sm="12" >
+                  <div className="text-center w-100">
                     <h1 className="mb-1" data-sal-duration="1000" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce">{contentfulHome.betterDecisions}</h1>
                     <h2 data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">{contentfulHome.childContentfulHomeAiDrivenLendingDecisionTextNode.aiDrivenLendingDecision}</h2>
                     <button onClick={() => scrollTo('#videodev')} className="button mt-4"  data-sal-duration="1000" data-sal="slide-up" data-sal-delay="500" data-sal-easing="ease-out-bounce">Watch Video &nbsp;&nbsp;<FontAwesomeIcon icon="play-circle" /></button>
-                  </Col>
+                  </div>
                 </Row>
               </Container>
            </div> 
