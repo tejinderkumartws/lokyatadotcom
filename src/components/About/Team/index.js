@@ -56,7 +56,7 @@ export default function Team({ teamrole }) {
                       />
                       <h5 className="h6 mb-1 mt-3">{node.memberName} </h5>
                       <span>{node.memberDesignation}</span>
-                      <a aria-label="team" href={node.linkdin}><FontAwesomeIcon icon={faLinkedinIn} /></a>
+                      <a aria-label="team" target="_blank" href={node.linkdin}><FontAwesomeIcon icon={faLinkedinIn} /></a>
                     </Col>
                       }
                       </>
